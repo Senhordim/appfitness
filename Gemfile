@@ -51,3 +51,6 @@ gem 'locastyle'
 
 # Build forms
 gem 'simple_form'
+
+# slim-template/slim
+gem "slim-rails"
