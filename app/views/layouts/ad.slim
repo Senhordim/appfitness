@@ -9,8 +9,7 @@ html.ls-theme-green
 		meta[name="description" content="Insira aqui a descrição da página."]
     = csrf_meta_tags
     = stylesheet_link_tag    'ad', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'ad', 'data-turbolinks-track': 'reload'
   body
   	= render "ad/elements/topbar"
     = yield
-
+		= javascript_include_tag 'ad', 'data-turbolinks-track': 'reload'
