@@ -50,7 +50,7 @@ end
 
 group :production do
   # Enables serving assets in production and setting your logger to standard out
-  gem "passenger"
+  # gem "passenger"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
