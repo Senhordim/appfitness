@@ -19,7 +19,8 @@
 					  	b.ls-label-text.ls-hidden-accessible Confirmar senha
 					  	= f.input :password_confirmation, required: true, label: false, wrapper: false, input_html: {class: 'ls-field-lg', placeholder: 'Confirmar senha'}
 
-						= f.button :submit, "Criar minha conta", class: 'ls-btn-primary ls-btn-block ls-btn-lg'
+						= f.button :submit, "próximo passo", class: 'ls-btn-primary ls-btn-block ls-btn-lg' do
+							
 					p
 						| Já tem conta ?
 						- if controller_name != 'sessions'
