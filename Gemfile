@@ -69,3 +69,6 @@ gem "slim-rails"
 
 #  authentication 
 gem 'devise'
+
+# Annotate 
+gem 'annotate'
