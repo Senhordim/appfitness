@@ -5,6 +5,10 @@
 				h1.ls-login-logo
 					= image_tag "fitnes.png"
 				= simple_form_for resource, as: resource_name, url: session_path(resource_name), input_html: {class: 'ls-form ls-login-form'} do |f|
+ 					-if flash[:alert].present? 
+ 						.ls-alert-danger
+ 							= raw flash[:alert] 
+
 					fieldset
 						label.ls-label
 							b.ls-label-text.ls-hidden-accessible
