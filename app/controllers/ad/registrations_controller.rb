@@ -4,6 +4,12 @@ class Ad::RegistrationsController < Devise::RegistrationsController
 
   layout 'auth'
 
+  protected
+
+  def after_sign_up_path_for(resource)
+    new_ad_academy_path
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
