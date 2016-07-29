@@ -8,5 +8,9 @@ Rails.application.routes.draw do
       sessions: 'ad/sessions'
     }
   	root 'pages#index'
+
+  	resources :academies do
+
+  	end
   end
 end
