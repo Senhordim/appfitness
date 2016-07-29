@@ -34,7 +34,7 @@
     span.ls-text
       | Voltar à lista de serviços
   h1.ls-brand-name
-    a.ls-ico-home[href="#"]
+    = link_to ad_root_path, class: 'ls-ico-star3' do
       small
-        | Nome do produto
-      = current_ad_user.email 
+        | Academia
+      = current_ad_user.academies.last.name

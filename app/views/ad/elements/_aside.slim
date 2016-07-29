@@ -24,11 +24,11 @@ aside.ls-sidebar
     nav.ls-menu
       ul
         li.ls-active
-          a.ls-ico-dashboard[href="#"]
-            | Dashboard
+          =link_to ad_root_path, class: 'ls-ico-dashboard'
+            | Painel
         li
-          a.ls-ico-stats[href="#"]
-            | Item de menu
+          =link_to ad_academies_path, class: 'ls-ico-home'
+            | Minhas academias
         li
           a.ls-ico-image[href="#"]
             | Item de menu
