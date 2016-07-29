@@ -73,3 +73,6 @@ gem 'devise'
 
 # Annotate 
 gem 'annotate'
+
+# Turbolinks
+gem 'jquery-turbolinks'
