@@ -1,0 +1,31 @@
+.ls-login-parent
+  .ls-login-inner
+    .ls-login-container
+      .ls-login-box
+        h1.ls-login-logo
+          = image_tag "fitnes.png"
+        hr
+        p Crie sua conta agora!
+        = simple_form_for [:ad, @academy], input_html: {class: 'ls-form ls-login-form'} do |f| 
+          fieldset
+
+            label.ls-label
+              b.ls-label-text.ls-hidden-accessible Nome da Academia
+              = f.input :name, required: true, autofocus: true, label: false, wrapper: false, input_html: {class: 'ls-field-lg', placeholder: 'Insira o nome da sua academia'}
+            label.ls-label
+              b.ls-label-text.ls-hidden-accessible Descrição
+              = f.input :description, required: true, autofocus: true, label: false, wrapper: false, input_html: {class: 'ls-field-lg', placeholder: 'Fale mais um pouco '}
+            label.ls-label
+              b.ls-label-text.ls-hidden-accessible Telefone
+              = f.input :phone, required: true, autofocus: true, label: false, wrapper: false, input_html: {class: 'ls-field-lg', placeholder: '(00) 00000-0000 '}
+            label.ls-label
+              b.ls-label-text.ls-hidden-accessible CNPJ
+              = f.input :cnpj, required: true, autofocus: true, label: false, wrapper: false, input_html: {class: 'ls-field-lg', placeholder: '00.000.000/0000-00'}
+            
+
+            = f.button :submit, "Concluir cadastro", class: 'ls-btn-primary ls-btn-block ls-btn-lg' do
+
+      .ls-login-adv
+        = image_tag 'price.png'
+
+
