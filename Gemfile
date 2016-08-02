@@ -76,3 +76,6 @@ gem 'annotate'
 
 # Turbolinks
 gem 'jquery-turbolinks'
+
+# CPF/CNPJ
+gem "cpf_cnpj"
