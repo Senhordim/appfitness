@@ -27,8 +27,9 @@ aside.ls-sidebar
           =link_to ad_root_path, class: 'ls-ico-dashboard'
             | Painel
         li
-          =link_to ad_academies_path, class: 'ls-ico-home'
-            | Minhas academias
+          -if current_ad_user.academy.present?
+            =link_to ad_academy_path(@academy), class: 'ls-ico-home'
+              | Minha Academia
         li
           a.ls-ico-image[href="#"]
             | Item de menu

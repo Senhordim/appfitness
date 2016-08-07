@@ -1,0 +1,19 @@
+h1.ls-title-intro.ls-ico-list2 Minha academia
+.ls-box
+	header.ls-info-header
+		h2.ls-title-3 Gerenciar
+		= link_to "Voltar", :back, class: 'ls-btn ls-btn-sm'
+		= link_to "Editar", edit_ad_academy_path, class: 'ls-btn ls-btn-sm'
+	table.ls-table.ls-table-striped
+		thead
+			tr
+				th Nome
+				th Descrição
+				th CNPJ
+				th Telefone
+		tbody
+			tr
+				td = @academy.name
+				td = @academy.description
+				td = @academy.cnpj
+				td = @academy.phone 

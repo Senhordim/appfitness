@@ -13,8 +13,7 @@
     .ls-dropdown.ls-user-account[data-ls-module="dropdown"]
       a.ls-ico-user[href="#"]
         span.ls-name
-          | João
-        |  (fmolina) 
+          = current_ad_user.email
       nav.ls-dropdown-nav.ls-user-menu
         ul
           li
@@ -37,4 +36,7 @@
     = link_to ad_root_path, class: 'ls-ico-star' do
       small
         | Academia
-      = current_ad_user.academies.last.name
+      -if current_ad_user.academy.present?
+        = current_ad_user.academy.name
+      -else
+        | Complete o cadastro
