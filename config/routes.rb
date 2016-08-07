@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   #see http://guides.rubyonrails.org/routing.html
 
   namespace :ad do
+  	root 'pages#index'
+
   	devise_for :users, controllers: {
       sessions: 'ad/sessions'
     }
-  	root 'pages#index'
+    
+    resources :academies
 
-  	resources :academies do
-
-  	end
   end
+
 end
