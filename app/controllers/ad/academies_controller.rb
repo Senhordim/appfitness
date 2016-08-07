@@ -1,20 +1,16 @@
 class Ad::AcademiesController < ApplicationController
 
-	layout :auth_layout
+	layout 'ad'
 
-	before_filter :find_academy, only: [:edit]
-	before_filter :find_user,  only: [:index, :new, :create]
-
-	def index
-		@academies = @user.academies.all
-	end
+	before_action :find_academy, only: [:show, :edit, :update]
+	before_action :find_user,  only: [:new, :create, :show]
 
 	def new
-		@academy = @user.academies.new
+		@academy = Academy.new
 	end
 
 	def create
-		@academy = @user.academies.new(academy_params)
+		@academy = Academy.new(academy_params)
 		if @academy.save
       flash[:notice] = "Academia cadastrada com sucesso"
       redirect_to  ad_root_path
@@ -26,6 +22,19 @@ class Ad::AcademiesController < ApplicationController
 	def edit
 	end
 
+	def update
+		respond_to do |format|
+      if @academy.update(academy_params)
+        format.html { redirect_to [:ad, @academy], notice: 'Academia atualizada com sucesso' }
+      else
+        format.html { render :edit }
+      end
+    end
+	end
+
+	def show
+	end
+
 	private
 
 	def find_user
@@ -33,7 +42,9 @@ class Ad::AcademiesController < ApplicationController
   end
 
 	def find_academy
-		@academy = Academy.find(params[:id])
+		# Usuário tem acesso apenas a sua academia
+		# @academy = @user.academy.find(params[:id])
+		@academy = User.find(current_ad_user.id).academy
 	end
 
 	def academy_params
@@ -41,7 +52,7 @@ class Ad::AcademiesController < ApplicationController
 	end
 
 	def auth_layout
-		current_ad_user.academies.present? ? 'ad' : 'auth'
+		current_ad_user.academy.present? ? 'ad' : 'auth'
   end
 
 end
