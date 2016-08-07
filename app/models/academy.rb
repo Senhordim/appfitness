@@ -23,4 +23,6 @@
 class Academy < ApplicationRecord
   belongs_to :user
 
+  validates :name, :description, :cnpj, :phone, presence: true
+
 end
