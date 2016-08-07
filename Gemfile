@@ -77,5 +77,11 @@ gem 'annotate'
 # Turbolinks
 gem 'jquery-turbolinks'
 
+# Mask
+gem 'maskedinput-rails'
+
 # CPF/CNPJ
 gem "cpf_cnpj"
+
+# Add items 
+gem "nested_form"
