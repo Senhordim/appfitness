@@ -85,3 +85,6 @@ gem "cpf_cnpj"
 
 # Add items 
 gem "nested_form"
+
+# rollbar 
+gem 'rollbar'
