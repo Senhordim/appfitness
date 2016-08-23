@@ -6,11 +6,11 @@ class Ad::AcademiesController < ApplicationController
 	before_action :find_user,  only: [:new, :create, :show]
 
 	def new
-		@academy = Academy.new
+		@academy = current_ad_user.build_academy
 	end
 
 	def create
-		@academy = Academy.new(academy_params)
+		@academy = current_ad_user.build_academy(academy_params)
 		if @academy.save
       flash[:notice] = "Academia cadastrada com sucesso"
       redirect_to  ad_root_path
@@ -42,8 +42,6 @@ class Ad::AcademiesController < ApplicationController
   end
 
 	def find_academy
-		# Usuário tem acesso apenas a sua academia
-		# @academy = @user.academy.find(params[:id])
 		@academy = User.find(current_ad_user.id).academy
 	end
 
