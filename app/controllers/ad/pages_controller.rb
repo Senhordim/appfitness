@@ -3,7 +3,7 @@ class Ad::PagesController < ApplicationController
 	layout 'ad'
 
 	def index
-		@academy = current_ad_user.academy
+		@academy = Academy.where(user_id: current_ad_user)
 	end
 
 end
