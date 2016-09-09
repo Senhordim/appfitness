@@ -1,14 +1,20 @@
-class Ad::RegistrationsController < Devise::RegistrationsController
+  class Ad::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
 
-  layout 'auth'
+  layout :admin_layout
 
   protected
 
   def after_sign_up_path_for(resource)
     new_ad_academy_path
   end
+
+  private
+
+    def admin_layout
+      current_ad_user.present? ? 'ad' : 'auth'
+    end
 
   # GET /resource/sign_up
   # def new

@@ -7,7 +7,7 @@ aside.ls-sidebar
     nav.ls-dropdown-nav.ls-user-menu[aria-hidden="true"]
       ul
         li
-          a[href="#" role="option"]
+          = link_to edit_ad_user_registration_path
             | Meus dados
         li
           a[href="#" role="option"]
@@ -26,13 +26,6 @@ aside.ls-sidebar
         li.ls-active
           =link_to ad_root_path, class: 'ls-ico-dashboard'
             | Painel
-        li
-          -if current_ad_user.academy.present?
-            =link_to ad_academy_path(@academy), class: 'ls-ico-home'
-              | Minha Academia
-        li
-          a.ls-ico-image[href="#"]
-            | Item de menu
         li.ls-submenu
           a.ls-ico-cog[href="#"]
             | Item de menu pai
@@ -40,9 +33,4 @@ aside.ls-sidebar
             li
               a.ls-submenu-item[href="#"]
                 | Item de submenu
-            li
-              a.ls-submenu-item[href="#"]
-                | Item de submenu
-            li
-              a.ls-submenu-item[href="#"]
-                | Item de submenu
+           
