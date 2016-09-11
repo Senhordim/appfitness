@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software para gestão de Academia, totalmente online! - Appfitnes</title>
+  <%= favicon_link_tag 'favicon-32x32.png' %>
+
+  <!--Open Sans Font [ OPTIONAL ]-->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag 'ad/ad', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- container -->
+  <div id="container" class="effect aside-float aside-bright mainnav-lg">
+    <!-- Navbar -->
+    <%= render partial: 'ad/elements/nav' %>
+    <!--  end navbar-->
+    <div class="boxed">
+      <!-- Content container -->
+      <div id="content-container">
+        <% if flash[:notice].present? %>
+          <div id="floating-top-right" class="floating-container">
+            <div class="alert-wrap in animated jellyIn">
+              <div class="alert alert-success">
+                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                <%= raw flash[:notice] %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if flash[:alert].present? %>
+          <div id="floating-top-right" class="floating-container">
+            <div class="alert-wrap in animated jellyIn">
+              <div class="alert alert-error">
+                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                <%= raw flash[:alert] %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if flash[:info].present? %>
+          <div id="floating-top-right" class="floating-container">
+            <div class="alert-wrap in animated jellyIn">
+              <div class="alert alert-info">
+                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                <%= raw flash[:info] %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </div>
+      <!-- End content container -->
+
+      <!-- main navigation -->
+      <nav id="mainnav-container">
+        <div id="mainnav">
+          <!-- menu -->
+          <%= render partial: 'ad/elements/menu' %>
+          <!-- end menu -->
+        </div>
+      </nav>
+      <!-- end main navigation -->
+
+      <!-- footer  -->
+      <footer id="footer">
+        <!-- Visible when footer positions are fixed -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="show-fixed pull-right">
+          You have <a href="#" class="text-bold text-main"><span class="label label-danger">3</span> pending action.</a>
+        </div>
+
+        <!-- Visible when footer positions are static -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="hide-fixed pull-right pad-rgt">
+            Desenvolvido por <strong><a href="http://www.startamus.com.br/">Startamus</a></strong>.
+        </div>
+
+        <p class="pad-lft">&#0169; 2016 Terra dos Homens</p>
+      </footer>
+      <!-- end footer -->
+
+      <!-- SCROLL PAGE BUTTON -->
+      <!--===================================================-->
+      <button class="scroll-top btn">
+          <i class="pci-chevron chevron-up"></i>
+      </button>
+      <!--===================================================-->
+    </div>
+  </div>
+  <!-- end container -->
+  <%= javascript_include_tag 'ad/ad', media: 'all', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>
