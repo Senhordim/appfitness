@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "font-awesome-rails"
 gem "sentry-raven"
-gem 'themify-icons-rails', git: 'git://github.com/Senhordim/themify-icons-rails.git'
+gem 'themify-icons-rails', git: 'https://github.com/Senhordim/themify-icons-rails'
 # gem 'morrisjs-rails'
 # gem 'raphael-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
