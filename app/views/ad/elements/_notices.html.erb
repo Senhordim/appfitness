@@ -1,0 +1,32 @@
+<% if flash[:notice].present? %>
+  <div id="floating-top-right" class="floating-container">
+    <div class="alert-wrap in animated jellyIn">
+      <div class="alert alert-success">
+        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+        <%= raw flash[:notice] %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:alert].present? %>
+  <div id="floating-top-right" class="floating-container">
+    <div class="alert-wrap in animated jellyIn">
+      <div class="alert alert-error">
+        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+        <%= raw flash[:alert] %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:info].present? %>
+  <div id="floating-top-right" class="floating-container">
+    <div class="alert-wrap in animated jellyIn">
+      <div class="alert alert-info">
+        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+        <%= raw flash[:info] %>
+      </div>
+    </div>
+  </div>
+<% end %>

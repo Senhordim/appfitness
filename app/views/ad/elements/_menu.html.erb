@@ -20,11 +20,13 @@
           </a>
         </div>
         <div id="profile-nav" class="collapse list-group bg-trans">
-          <a href="#" class="list-group-item">
+
+          <%= link_to edit_ad_user_registration_path, class: 'list-group-item' do %>
             <i class="ti-user"></i> Minha conta
-          </a>
+          <% end %>
+
           <a href="#" class="list-group-item">
-            <i class="ti-share-alt"></i> Deslogar
+            <i class="ti-share-alt"></i> Sair
           </a>
         </div>
       </div>

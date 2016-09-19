@@ -1,27 +1,59 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+<div id="page-content">
+  <div id="page-title">
+    <h1 class="page-header text-overflow">Meus Dados</h1>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <ol class="breadcrumb">
+    <li><a href="#">Painel</a></li>
+    <li><a href="#">Minha conta</a></li>
+    <li class="active">Edição</li>
+  </ol>             
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="panel">
+          <div class="panel-heading">
+              <h3 class="panel-title">Atualizar dados</h3>
+          </div>
+
+          <!--Input Size-->
+          <!--===================================================-->
+
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+              <div class="panel-body">
+                <%= f.input :email, required: true, autofocus: true %>
+
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+
+                <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+                <%= f.input :password_confirmation, required: false %>
+                <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+
+                <h3>Cancel my account</h3>
+
+                <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+              </div>
+
+              <div class="panel-footer">
+                <div class="row">
+                  <div class="col-sm-12 text-right">
+                    <%= link_to "Voltar", :back, class: 'btn btn-default' %>
+                    <%= f.button :submit, "Update", class: 'btn btn-success' %>
+                  </div>
+                </div>
+              </div>
+
+          <% end %>
+
+          <!--===================================================-->
+          <!--End Input Size-->
+      </div>
+    </div>
+    <div class="col-lg-4">
+
+    </div>
   </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
